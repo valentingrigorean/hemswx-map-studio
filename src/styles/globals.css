@@ -1,0 +1,664 @@
+@import "tailwindcss";
+
+@theme {
+  /* Dark theme color palette */
+  --color-bg: #0f1115;
+  --color-panel: #171923;
+  --color-muted: #9aa4b2;
+  --color-text: #e6e8ee;
+  --color-accent: #5b9cff;
+  --color-ok: #2ecc71;
+  --color-warn: #ffb020;
+  --color-bad: #ff5c5c;
+  --color-border: #22273a;
+  --color-border-hover: #3a4460;
+  --color-input-bg: #0b0d12;
+  --color-hover-bg: #10141d;
+  --color-selected-bg: #121523;
+
+  /* Extend default color palette */
+  --color-slate-950: #0b0d12;
+  --color-slate-900: #0f1115;
+  --color-slate-850: #10141d;
+  --color-slate-800: #171923;
+  --color-slate-750: #121523;
+  --color-slate-700: #22273a;
+  --color-slate-600: #3a4460;
+  --color-slate-500: #9aa4b2;
+  --color-slate-200: #e6e8ee;
+  --color-blue-500: #5b9cff;
+  --color-green-500: #2ecc71;
+  --color-yellow-500: #ffb020;
+  --color-red-500: #ff5c5c;
+  
+  /* Font sizes */
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+}
+
+body {
+  @apply bg-slate-900 text-slate-200 text-sm leading-relaxed overflow-x-hidden font-sans;
+  margin: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply m-0 font-medium;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-panel);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  @apply rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text);
+}
+
+/* JSON editor specific styles */
+.json-editor {
+  @apply w-full bg-slate-950 text-slate-200 border border-slate-700 rounded-lg p-2.5 font-mono text-xs leading-relaxed resize-none;
+  height: 70vh;
+  tab-size: 2;
+}
+
+.json-editor:focus {
+  @apply border-blue-500 outline-none;
+}
+
+/* Code formatting */
+code.inline {
+  @apply bg-slate-950 px-1.5 py-0.5 rounded border border-slate-700 font-mono text-xs;
+}
+
+/* Button component styles */
+.btn {
+  @apply bg-slate-800 text-slate-200 border border-slate-700 px-2.5 py-2 rounded-lg cursor-pointer transition-all duration-150 text-sm font-sans inline-flex items-center justify-center gap-1.5;
+}
+
+.btn:hover {
+  @apply border-slate-600 -translate-y-px;
+}
+
+.btn:active {
+  @apply translate-y-0;
+}
+
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed transform-none;
+}
+
+.btn.primary {
+  @apply bg-blue-500 border-transparent text-white;
+}
+
+.btn.success {
+  @apply bg-green-500 border-transparent text-white;
+}
+
+.btn.danger {
+  @apply text-red-300 border-red-800;
+  background: #2a0f12;
+}
+
+.btn.ghost {
+  @apply bg-transparent;
+}
+
+.btn.small {
+  @apply px-2 py-1 text-xs;
+}
+
+/* Pills */
+.pill {
+  @apply inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-xs mr-1.5 font-medium;
+}
+
+.pill.ok {
+  @apply text-green-300 border border-green-700;
+  background: #11331f;
+}
+
+.pill.warn {
+  @apply text-yellow-300 border border-yellow-700;
+  background: #2e2815;
+}
+
+.pill.bad {
+  @apply text-red-300 border border-red-700;
+  background: #34161a;
+}
+
+/* Drop zone */
+.dropzone {
+  @apply border-2 border-dashed border-slate-700 rounded-lg p-3.5 text-center text-slate-500 cursor-pointer mb-3 transition-all duration-150;
+}
+
+.dropzone:hover {
+  @apply border-slate-600 bg-slate-850;
+}
+
+.dropzone.drag-over {
+  @apply border-blue-500;
+  background: rgba(91, 156, 255, 0.05);
+}
+
+/* Feature styles */
+.feature-category {
+  @apply border border-slate-700 rounded-lg p-2 px-2.5 my-2 bg-slate-850;
+}
+
+.feature-category-header {
+  @apply cursor-pointer text-slate-200 font-medium py-2 border-b border-slate-700 mb-2 select-none;
+}
+
+.feature-list-item {
+  @apply p-2.5 px-3 border-b border-slate-700 flex justify-between items-center bg-slate-950 border border-slate-700 rounded-md mb-1 cursor-pointer transition-all duration-150;
+}
+
+.feature-list-item:hover {
+  @apply bg-slate-850;
+}
+
+.feature-list-item.selected {
+  @apply outline-2 outline-blue-500 bg-slate-750;
+}
+
+.feature-list-item.drag-over {
+  @apply outline-2 outline-dashed outline-blue-500;
+}
+
+.feature-info {
+  @apply flex-1;
+}
+
+.feature-name {
+  @apply text-sm font-medium text-slate-200;
+}
+
+.feature-details {
+  @apply text-xs text-slate-500 mt-0.5;
+}
+
+.feature-actions {
+  @apply flex gap-1.5 items-center;
+}
+
+/* Form elements */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-slate-200 font-medium mb-1.5 text-sm;
+}
+
+.form-input,
+.form-select {
+  @apply w-full bg-slate-950 text-slate-200 border border-slate-700 rounded-md px-2.5 py-2 text-sm font-sans;
+}
+
+.form-input:focus,
+.form-select:focus {
+  @apply border-blue-500 outline-none;
+  box-shadow: 0 0 0 2px rgba(91, 156, 255, 0.1);
+}
+
+.form-textarea {
+  @apply w-full bg-slate-950 text-slate-200 border border-slate-700 rounded-md px-2.5 py-2 min-h-[100px] resize-y font-mono text-xs leading-relaxed;
+}
+
+.form-textarea:focus {
+  @apply border-blue-500 outline-none;
+  box-shadow: 0 0 0 2px rgba(91, 156, 255, 0.1);
+}
+
+.form-checkbox {
+  @apply mr-2;
+  accent-color: var(--color-accent);
+}
+
+.form-radio {
+  @apply block mb-2 p-2 border border-slate-700 rounded-md cursor-pointer transition-all duration-150;
+}
+
+.form-radio:hover {
+  @apply border-slate-600 bg-slate-850;
+}
+
+.form-radio input {
+  @apply mr-2;
+}
+
+.form-help {
+  @apply text-xs text-slate-500 mt-1;
+}
+
+/* Layer section */
+.layer-section {
+  @apply border border-slate-700 rounded-lg bg-slate-950 p-3 mb-3;
+}
+
+.layer-section h4 {
+  @apply m-0 mb-2 text-sm text-slate-200;
+}
+
+/* Wizard modal */
+.wizard-modal {
+  @apply hidden fixed inset-0 z-[1000] p-5 overflow-y-auto;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.wizard-modal.active {
+  @apply flex items-center justify-center;
+}
+
+.wizard-content {
+  @apply bg-slate-800 border border-slate-700 rounded-xl w-[90%] max-w-[900px] max-h-[90vh] overflow-y-auto;
+}
+
+.wizard-header {
+  @apply p-4 px-5 border-b border-slate-700;
+}
+
+.wizard-header h2 {
+  @apply m-0 text-xl;
+}
+
+.wizard-body {
+  @apply p-5;
+}
+
+.wizard-layout {
+  @apply flex gap-6;
+}
+
+.wizard-sidebar {
+  @apply w-[200px] flex-shrink-0;
+}
+
+.wizard-main {
+  @apply flex-1 h-[500px] overflow-y-auto pr-2;
+}
+
+.wizard-footer {
+  @apply p-4 px-5 border-t border-slate-700 flex gap-2 justify-end;
+}
+
+/* Stepper */
+.stepper {
+  @apply flex flex-col p-0 gap-4;
+}
+
+.stepper-item {
+  @apply flex items-center relative py-2;
+}
+
+.stepper-item:not(:last-child)::after {
+  content: '';
+  @apply absolute top-10 left-4 -bottom-2 w-0.5 bg-slate-700 z-[1];
+}
+
+.stepper-item.completed:not(:last-child)::after {
+  @apply bg-green-500;
+}
+
+.stepper-item.active:not(:last-child)::after {
+  @apply bg-blue-500;
+}
+
+.stepper-number {
+  @apply w-8 h-8 rounded-full bg-slate-700 text-slate-500 flex items-center justify-center text-sm font-medium z-[2] relative mr-3 flex-shrink-0;
+}
+
+.stepper-item.active .stepper-number {
+  @apply bg-blue-500 text-white;
+}
+
+.stepper-item.completed .stepper-number {
+  @apply bg-green-500 text-white;
+}
+
+.stepper-item.completed .stepper-number::after {
+  content: '✓';
+}
+
+.stepper-item.completed .stepper-number span {
+  @apply hidden;
+}
+
+.stepper-label {
+  @apply text-sm text-slate-500 leading-relaxed flex-1;
+}
+
+.stepper-item.active .stepper-label {
+  @apply text-slate-200 font-medium;
+}
+
+/* Step content */
+.step-content {
+  @apply hidden;
+}
+
+.step-content.active {
+  @apply block;
+}
+
+/* Items container in wizard */
+.items-container {
+  @apply border border-slate-700 rounded-lg bg-slate-950 max-h-[300px] overflow-y-auto;
+}
+
+.item-row {
+  @apply p-3 border-b border-slate-700 flex justify-between items-center;
+}
+
+.item-row:last-child {
+  @apply border-b-0;
+}
+
+.item-info {
+  @apply flex-1;
+}
+
+.item-name {
+  @apply font-medium text-sm;
+}
+
+.item-details {
+  @apply text-xs text-slate-500 mt-0.5;
+}
+
+.item-layers {
+  @apply text-xs text-yellow-500 mt-0.5;
+}
+
+.item-actions {
+  @apply flex gap-1.5 items-center;
+}
+
+/* Layer association grid */
+.layer-grid {
+  @apply grid grid-cols-1 gap-3 max-h-[400px] overflow-y-auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.layer-options {
+  @apply max-h-[200px] overflow-y-auto;
+}
+
+.layer-option {
+  @apply flex items-center py-1 text-xs;
+}
+
+.layer-option input {
+  @apply mr-1.5;
+  accent-color: var(--color-accent);
+}
+
+.layer-option label {
+  @apply cursor-pointer text-slate-500 flex-1;
+}
+
+.layer-option:hover label {
+  @apply text-slate-200;
+}
+
+/* Validation results */
+.validation-results {
+  @apply border border-slate-700 rounded-lg bg-slate-950 p-3 mb-4;
+}
+
+.validation-item {
+  @apply p-2 mb-1.5 rounded text-xs;
+}
+
+.validation-item:last-child {
+  @apply mb-0;
+}
+
+.validation-item.error {
+  @apply text-red-300 border border-red-700;
+  background: #34161a;
+}
+
+.validation-item.warning {
+  @apply text-yellow-300 border border-yellow-700;
+  background: #2e2815;
+}
+
+.validation-item.success {
+  @apply text-green-300 border border-green-700;
+  background: #11331f;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .main-layout {
+    @apply flex-col;
+  }
+  
+  .main-column.left,
+  .main-column.right {
+    @apply w-full min-w-0;
+  }
+  
+  .tools-grid {
+    @apply grid-cols-1;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    @apply flex-wrap gap-2;
+  }
+  
+  .header .quick-summary {
+    @apply order-3 w-full ml-0 items-start;
+  }
+  
+  .main-layout {
+    @apply p-2;
+  }
+  
+  .tab-buttons,
+  .right-tab-buttons {
+    @apply flex-wrap;
+  }
+
+  /* Wizard responsive */
+  .wizard-modal {
+    @apply p-2.5;
+  }
+  
+  .wizard-layout {
+    @apply flex-col gap-4;
+  }
+  
+  .wizard-sidebar {
+    @apply w-full;
+  }
+  
+  .stepper {
+    @apply flex-row gap-2 overflow-x-auto pb-2;
+  }
+  
+  .stepper-item {
+    @apply flex-col text-center min-w-[80px];
+  }
+  
+  .stepper-item:not(:last-child)::after {
+    @apply hidden;
+  }
+  
+  .stepper-number {
+    @apply mr-0 mb-1;
+  }
+  
+  .stepper-label {
+    @apply text-[10px];
+  }
+  
+  .wizard-main {
+    @apply h-auto max-h-[60vh];
+  }
+  
+  .layer-grid {
+    @apply grid-cols-1;
+  }
+  
+  .wizard-footer {
+    @apply flex-wrap gap-2;
+  }
+}
+
+/* Calcite Design System - Dark theme overrides */
+[data-calcite-mode="dark"],
+calcite-panel,
+calcite-dropdown,
+calcite-list,
+calcite-card {
+  --calcite-color-brand: #5b9cff;
+  --calcite-color-brand-hover: #4589f0;
+  --calcite-color-brand-press: #3578df;
+  --calcite-color-background: #171923;
+  --calcite-color-foreground-1: #1e2230;
+  --calcite-color-foreground-2: #22273a;
+  --calcite-color-foreground-3: #2a3048;
+  --calcite-color-text-1: #e6e8ee;
+  --calcite-color-text-2: #b8bcc8;
+  --calcite-color-text-3: #9aa4b2;
+  --calcite-color-border-1: #3a4460;
+  --calcite-color-border-2: #22273a;
+  --calcite-color-border-3: #171923;
+}
+
+calcite-panel {
+  --calcite-panel-background-color: var(--calcite-color-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+calcite-list-item {
+  --calcite-list-item-background-color: transparent;
+}
+
+calcite-list-item:hover {
+  --calcite-list-item-background-color: var(--calcite-color-foreground-2);
+}
+
+calcite-card {
+  --calcite-card-background-color: var(--calcite-color-foreground-1);
+}
+
+calcite-button[appearance="outline-fill"] {
+  --calcite-button-background-color: var(--calcite-color-foreground-2);
+}
+
+calcite-dropdown-item[selected] {
+  --calcite-color-foreground-current: var(--calcite-color-brand);
+}
+
+/* ArcGIS Map Components - Dark theme */
+arcgis-legend {
+  --calcite-color-background: rgba(23, 25, 35, 0.95);
+  --calcite-color-foreground-1: #1e2230;
+  --calcite-color-text-1: #e6e8ee;
+  --calcite-color-text-2: #b8bcc8;
+  --calcite-color-text-3: #9aa4b2;
+  --calcite-color-border-1: #3a4460;
+}
+
+arcgis-legend::part(container) {
+  background: rgba(23, 25, 35, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure text is readable in legend */
+.esri-legend {
+  --esri-widget-background: rgba(23, 25, 35, 0.95) !important;
+  background: rgba(23, 25, 35, 0.95) !important;
+  color: #e6e8ee !important;
+}
+
+.esri-legend__layer-caption,
+.esri-legend__layer-cell--info,
+.esri-legend__service-label {
+  color: #e6e8ee !important;
+}
+
+.esri-widget {
+  --esri-widget-background: rgba(23, 25, 35, 0.95);
+  --esri-widget-color: #e6e8ee;
+  color: #e6e8ee;
+}
+
+/* Native identify popup, retinted to the studio card look (Preview section).
+   Inner content is calcite components in shadow DOM, so colors go through
+   calcite tokens, which inherit; box chrome via the light-DOM container. */
+.esri-popup {
+  --calcite-color-foreground-1: #11141b;
+  --calcite-color-foreground-2: #1a1f2b;
+  --calcite-color-foreground-3: #232a3a;
+  --calcite-color-text-1: #f2f5fa;
+  --calcite-color-text-2: #cfd8e6;
+  --calcite-color-text-3: #9aa9c2;
+  --calcite-color-border-1: rgba(120, 140, 180, 0.28);
+  --calcite-color-border-2: rgba(120, 140, 180, 0.22);
+  --calcite-color-border-3: rgba(120, 140, 180, 0.16);
+  --calcite-color-brand: #5b9cff;
+  --calcite-color-brand-hover: #79b0ff;
+  --calcite-color-text-link: #8db4ff;
+  font-family: inherit;
+}
+
+.esri-popup__main-container {
+  background: #11141b;
+  border: 1px solid rgba(120, 140, 180, 0.28);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+}
+
+.esri-popup__pointer-direction {
+  background: #11141b;
+  border: 1px solid rgba(120, 140, 180, 0.28);
+}
+/* ---------------------------------------------------------------- v2 editor */
+/* Scoped styles for the Map Studio v2 editor (Navigator / Inspector / Preview).
+   The editor uses inline styles ported 1:1 from the design; these are the few
+   pseudo-state rules that can't live inline. */
+.nav-row:hover {
+  background: #12141c !important;
+}
+
+/* Portal Basemaps browser: skeleton shimmer + spinner. */
+@keyframes bm-shimmer-kf {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.bm-shimmer {
+  background: linear-gradient(90deg, #12141c 25%, #1a1f30 50%, #12141c 75%);
+  background-size: 200% 100%;
+  animation: bm-shimmer-kf 1.4s ease-in-out infinite;
+}
+@keyframes bm-spin-kf {
+  to { transform: rotate(360deg); }
+}
+.bm-spin {
+  animation: bm-spin-kf 0.7s linear infinite;
+}

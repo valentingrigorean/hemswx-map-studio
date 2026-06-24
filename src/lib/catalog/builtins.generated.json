@@ -1,0 +1,497 @@
+{
+  "mapLayerIds": [
+    "sigmet",
+    "airmet",
+    "aviationObstacles",
+    "ais",
+    "helicopterRange",
+    "helicopterOnlyAir",
+    "lightning",
+    "safeSky",
+    "vfrRoutes",
+    "notam",
+    "mpdls",
+    "dispatch",
+    "dispatchV2",
+    "labels",
+    "relief",
+    "weatherStation",
+    "buildings3D",
+    "trees3D",
+    "details3D",
+    "labels3D",
+    "sunLighting3D"
+  ],
+  "poiTypes": [
+    {
+      "name": "unknown",
+      "id": -1
+    },
+    {
+      "name": "weatherCamera",
+      "id": 1
+    },
+    {
+      "name": "ambulancePlane",
+      "id": 2
+    },
+    {
+      "name": "airport",
+      "id": 3
+    },
+    {
+      "name": "fuel",
+      "id": 4
+    },
+    {
+      "name": "rescueHelicopter",
+      "id": 5
+    },
+    {
+      "name": "hospital",
+      "id": 6
+    },
+    {
+      "name": "webCamera",
+      "id": 7
+    },
+    {
+      "name": "ambulanceHelicopter",
+      "id": 8
+    },
+    {
+      "name": "flightHazard",
+      "id": 9
+    },
+    {
+      "name": "flightHazardZipLine",
+      "id": 10
+    },
+    {
+      "name": "helipad",
+      "id": 11
+    },
+    {
+      "name": "weatherStation",
+      "id": 12
+    },
+    {
+      "name": "landingField",
+      "id": 13
+    },
+    {
+      "name": "offshoreRig",
+      "id": 14
+    },
+    {
+      "name": "drops",
+      "id": 15
+    },
+    {
+      "name": "hkp",
+      "id": 16
+    }
+  ],
+  "routeForecastSources": [
+    "iga",
+    "smhi",
+    "offShore",
+    "nla"
+  ],
+  "layerKeys": [
+    {
+      "key": "safe_sky",
+      "constant": "kSafeSkyLayerKey"
+    },
+    {
+      "key": "lightning",
+      "constant": "kLightningLayerKey"
+    },
+    {
+      "key": "relief",
+      "constant": "kReliefLayerKey"
+    },
+    {
+      "key": "mpdls",
+      "constant": "kMpdlsLayerKey"
+    },
+    {
+      "key": "aviation_obstacle",
+      "constant": "kAviationObstacleLayerKey"
+    },
+    {
+      "key": "current_user_location",
+      "constant": "kCurrentUserLocationLayerKey"
+    },
+    {
+      "key": "dropped_pin",
+      "constant": "kDroppedPinLayerKey"
+    },
+    {
+      "key": "vfr",
+      "constant": "kVfrLayerKey"
+    },
+    {
+      "key": "vfr_lines",
+      "constant": "kVfrLinesLayerKey"
+    },
+    {
+      "key": "vfr_points",
+      "constant": "kVfrPointsLayerKey"
+    },
+    {
+      "key": "route_forecast",
+      "constant": "kRouteLayerKey"
+    },
+    {
+      "key": "ais",
+      "constant": "kAisLayerKey"
+    },
+    {
+      "key": "3d_buildings",
+      "constant": "k3DBuildingsLayerKey"
+    },
+    {
+      "key": "3d_trees",
+      "constant": "k3DTreesLayerKey"
+    },
+    {
+      "key": "3d_details",
+      "constant": "k3DDetailsLayerKey"
+    },
+    {
+      "key": "3d_place_names",
+      "constant": "k3DPlaceNamesLayerKey"
+    },
+    {
+      "key": "labels",
+      "constant": "kLabelsLayerKey"
+    },
+    {
+      "key": "sigmet",
+      "constant": "kSigmetLayerKey"
+    },
+    {
+      "key": "airmet",
+      "constant": "kAirmetLayerKey"
+    },
+    {
+      "key": "notam_areas",
+      "constant": "kNotamAreasLayerKey"
+    },
+    {
+      "key": "notam_markers",
+      "constant": "kNotamMarkersLayerKey"
+    },
+    {
+      "key": "mpdls_main",
+      "constant": "kMpdlsMainLayerKey"
+    },
+    {
+      "key": "mpdls_connection_lines",
+      "constant": "kMpdlsConnectionLinesLayerKey"
+    },
+    {
+      "key": "mpdls_azimuth_lines",
+      "constant": "kMpdlsAzimuthLinesLayerKey"
+    },
+    {
+      "key": "dispatch_simple",
+      "constant": "kDispatchSimpleLayerKey"
+    },
+    {
+      "key": "dispatch_v2",
+      "constant": "kDispatchV2LayerKey"
+    },
+    {
+      "key": "direction_markers",
+      "constant": "kDirectionMarkersLayerKey"
+    },
+    {
+      "key": "direction_routes",
+      "constant": "kDirectionRoutesLayerKey"
+    },
+    {
+      "key": "weather_station",
+      "constant": "kWeatherStationLayerKey"
+    },
+    {
+      "key": "helicopter_marker",
+      "constant": "kHelicopterMarkerLayerKey"
+    },
+    {
+      "key": "helicopter_range",
+      "constant": "kHelicopterRangeLayerKey"
+    },
+    {
+      "key": "helicopter_history",
+      "constant": "kHelicopterHistoryLayerKey"
+    },
+    {
+      "key": "drone_marker",
+      "constant": "kDroneMarkerLayerKey"
+    },
+    {
+      "key": "drone_zone",
+      "constant": "kDroneZoneLayerKey"
+    }
+  ],
+  "recognizedOverrides": {
+    "safe_sky": "safeSky",
+    "aviation_obstacle": "aviationObstacles"
+  },
+  "builtinFeatures": [
+    {
+      "id": "sigmet",
+      "storageKey": "builtin:sigmet",
+      "legacyJsonKey": "showSigmet",
+      "overridableRemoteId": null,
+      "displayName": "SIGMET",
+      "group": "weather",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "airmet",
+      "storageKey": "builtin:airmet",
+      "legacyJsonKey": "showAirmet",
+      "overridableRemoteId": null,
+      "displayName": "AIRMET",
+      "group": "weather",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "aviationObstacles",
+      "storageKey": "builtin:aviationObstacles",
+      "legacyJsonKey": "showAviationObstacles",
+      "overridableRemoteId": "aviation_obstacle",
+      "displayName": "Aviation obstacles",
+      "group": "aviation",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "ais",
+      "storageKey": "builtin:ais",
+      "legacyJsonKey": "showAis",
+      "overridableRemoteId": null,
+      "displayName": "AIS vessels",
+      "group": "traffic",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "helicopterRange",
+      "storageKey": "builtin:helicopterRange",
+      "legacyJsonKey": "showHelicopterRange",
+      "overridableRemoteId": null,
+      "displayName": "Helicopter range",
+      "group": "helicopter",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "helicopterOnlyAir",
+      "storageKey": "builtin:helicopterOnlyAir",
+      "legacyJsonKey": "showHelicopterOnlyAir",
+      "overridableRemoteId": null,
+      "displayName": "Helicopter (air only)",
+      "group": "helicopter",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "lightning",
+      "storageKey": "builtin:lightning",
+      "legacyJsonKey": null,
+      "overridableRemoteId": null,
+      "displayName": "Lightning",
+      "group": "weather",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "safeSky",
+      "storageKey": "builtin:safeSky",
+      "legacyJsonKey": "showSafeSky",
+      "overridableRemoteId": "safe_sky",
+      "displayName": "SafeSky traffic",
+      "group": "traffic",
+      "dimension": "map",
+      "config": "safeSky",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "vfrRoutes",
+      "storageKey": "builtin:vfrRoutes",
+      "legacyJsonKey": "showVfrRoutes",
+      "overridableRemoteId": null,
+      "displayName": "VFR routes",
+      "group": "aviation",
+      "dimension": "map",
+      "config": "vfrRoutes",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "notam",
+      "storageKey": "builtin:notam",
+      "legacyJsonKey": "showNotam",
+      "overridableRemoteId": null,
+      "displayName": "NOTAM",
+      "group": "aviation",
+      "dimension": "map",
+      "config": "notam",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "mpdls",
+      "storageKey": "builtin:mpdls",
+      "legacyJsonKey": "showMpdls",
+      "overridableRemoteId": null,
+      "displayName": "MPDLS",
+      "group": "aviation",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "dispatch",
+      "storageKey": "builtin:dispatch",
+      "legacyJsonKey": null,
+      "overridableRemoteId": null,
+      "displayName": "Dispatch",
+      "group": "dispatch",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "dispatchV2",
+      "storageKey": "builtin:dispatchV2",
+      "legacyJsonKey": null,
+      "overridableRemoteId": null,
+      "displayName": "Dispatch v2",
+      "group": "dispatch",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "labels",
+      "storageKey": "builtin:labels",
+      "legacyJsonKey": "showLabels",
+      "overridableRemoteId": null,
+      "displayName": "Place labels",
+      "group": "base",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "relief",
+      "storageKey": "builtin:relief",
+      "legacyJsonKey": "showRelief",
+      "overridableRemoteId": null,
+      "displayName": "Relief shading",
+      "group": "base",
+      "dimension": "map",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": 0.2
+    },
+    {
+      "id": "weatherStation",
+      "storageKey": "builtin:weatherStation",
+      "legacyJsonKey": null,
+      "overridableRemoteId": null,
+      "displayName": "Weather stations",
+      "group": "weather",
+      "dimension": "map",
+      "config": "weatherStation",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "buildings3D",
+      "storageKey": "builtin:buildings3D",
+      "legacyJsonKey": "show3DBuildings",
+      "overridableRemoteId": null,
+      "displayName": "3D buildings",
+      "group": "threeD",
+      "dimension": "scene",
+      "config": "basic",
+      "defaultEnabled": true,
+      "defaultOpacity": null
+    },
+    {
+      "id": "trees3D",
+      "storageKey": "builtin:trees3D",
+      "legacyJsonKey": "show3DTrees",
+      "overridableRemoteId": null,
+      "displayName": "3D trees",
+      "group": "threeD",
+      "dimension": "scene",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "details3D",
+      "storageKey": "builtin:details3D",
+      "legacyJsonKey": "show3DDetails",
+      "overridableRemoteId": null,
+      "displayName": "3D details",
+      "group": "threeD",
+      "dimension": "scene",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "labels3D",
+      "storageKey": "builtin:labels3D",
+      "legacyJsonKey": "show3DLabels",
+      "overridableRemoteId": null,
+      "displayName": "3D labels",
+      "group": "threeD",
+      "dimension": "scene",
+      "config": "basic",
+      "defaultEnabled": false,
+      "defaultOpacity": null
+    },
+    {
+      "id": "sunLighting3D",
+      "storageKey": "builtin:sunLighting3D",
+      "legacyJsonKey": "show3DSunLighting",
+      "overridableRemoteId": null,
+      "displayName": "3D sun lighting",
+      "group": "threeD",
+      "dimension": "scene",
+      "config": "basic",
+      "defaultEnabled": true,
+      "defaultOpacity": null
+    }
+  ]
+}
