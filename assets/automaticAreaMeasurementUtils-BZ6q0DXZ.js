@@ -1,0 +1,1 @@
+import{o as i,U as a,j as l,g as c}from"./geodesicAreaMeasurementUtils-DgdH8mQM.js";const d=u=>({autoAreaByElevationMode(e,o,r=a()){if(o==="on-the-ground"){const n=u.geodesicArea(e);return n??l(e,r)}return c(e,r)},autoArea2D(e,o=a()){return this.autoAreaByElevationMode(e,"on-the-ground",o)}});let t=null;async function g(){return t||(t=d(await i())),t}export{g as u};
